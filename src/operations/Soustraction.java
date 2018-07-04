@@ -13,10 +13,16 @@ public class Soustraction implements Expression{
     // des Champs
     private Expression operandeA;
     private Expression operandeB;
+    //Constructeur
+    public Soustraction(Expression operandeA, Expression operandeB) {
+        this.operandeA = operandeA;
+        this.operandeB = operandeB;
+    }
+    
     
     @Override
     public double evaluer() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return operandeA.evaluer() - operandeB.evaluer();
     }
 
     @Override
@@ -28,23 +34,4 @@ public class Soustraction implements Expression{
     public String toPolonaise() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
-    public Expression getOperandeA() {
-        return operandeA;
-    }
-
-    public void setOperandeA(Expression operandeA) {
-        this.operandeA = operandeA;
-    }
-
-    public Expression getOperandeB() {
-        return operandeB;
-    }
-
-    public void setOperandeB(Expression operandeB) {
-        this.operandeB = operandeB;
-    }
-    
-    
-    
 }

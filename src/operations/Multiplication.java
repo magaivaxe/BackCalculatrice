@@ -13,10 +13,16 @@ public class Multiplication implements Expression{
     // des Champs
     private Expression operandeA;
     private Expression operandeB;
+    // Constructeur
+    public Multiplication(Expression operandeA, Expression operandeB) {
+        this.operandeA = operandeA;
+        this.operandeB = operandeB;
+    }
+    
     
     @Override
     public double evaluer() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return operandeA.evaluer() * operandeB.evaluer();
     }
 
     @Override

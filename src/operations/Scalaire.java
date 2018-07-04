@@ -12,30 +12,27 @@ package operations;
 public class Scalaire implements Expression{
     // des Champs
     private double scalaire;
-    // Méthodes
+    // objets
+    
+    // Constructeur
+    public Scalaire(double scalaire) {
+        this.scalaire = scalaire;
+    }
+    
     @Override
     public double evaluer() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return scalaire;
     }
 
     @Override
     public String toInfix() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String aRetourner = Double.toString(scalaire);
+        return aRetourner;
     }
 
     @Override
     public String toPolonaise() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String aRetourner = Double.toString(scalaire);
+        return aRetourner + " ";
     }
-
-    public double getScalaire() {
-        return scalaire;
-    }
-
-    public void setScalaire(double scalaire) {
-        this.scalaire = scalaire;
-    }
-    
-    
-    
 }
