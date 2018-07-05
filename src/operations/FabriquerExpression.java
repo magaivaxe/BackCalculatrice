@@ -17,7 +17,6 @@ public class FabriquerExpression {
     private final String ADDITION = "+";
     private final String SOUTRACTION = "-";
     private final String MULTIPLICATION = "*";
-    private final String DIVISION = "/";
     // objets
     public static Stack<Expression> stack = new Stack<>();
     // constructeur
@@ -49,7 +48,7 @@ public class FabriquerExpression {
     }
     public void remplirPile(String entre){
         //Locaux
-        String [] recu = entre.split("");
+        String [] recu = entre.split(" ");
         Expression expression;
         //
         for (String str : recu) {

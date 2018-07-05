@@ -14,13 +14,11 @@ public class Addition implements Expression{
     private Expression operandeA;
     private Expression operandeB;
     //Constructeur
-
     public Addition(Expression operandeA, Expression operandeB) {
         this.operandeA = operandeA;
         this.operandeB = operandeB; 
     }
-    
-    
+
     @Override
     public double evaluer() {
         return operandeA.evaluer() + operandeB.evaluer();
@@ -35,5 +33,9 @@ public class Addition implements Expression{
     @Override
     public String toPolonaise() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    public void atester(){
+        
     }
 }
