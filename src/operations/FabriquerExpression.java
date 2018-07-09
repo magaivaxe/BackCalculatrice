@@ -9,10 +9,10 @@ import java.util.Stack;
  */
 public class FabriquerExpression {
     // champs
-    private final String ADDITION = "+";
-    private final String SOUTRACTION = "-";
-    private final String MULTIPLICATION = "*";
-    private final String DIVISION = "/";
+    final String ADDITION = "+";
+    final String SOUTRACTION = "-";
+    final String MULTIPLICATION = "*";
+    final String DIVISION = "/";
     private boolean estPolonaise = false;
     // objets
     private Stack<Expression> stack = new Stack<>();

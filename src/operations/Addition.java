@@ -22,11 +22,19 @@ public class Addition implements Expression{
 
     @Override
     public String toInfix() {
-        return "(" + operandeA.evaluer() + " + " + operandeB.evaluer() + ")";
+        // Locaux
+        FabriquerExpression fe = new FabriquerExpression();
+        //
+        if (fe.getListInfix().isEmpty() ||
+            fe.getListInfix().get(fe.getListInfix().size() - 1)
+                    .equals(fe.ADDITION)) {
+            return "(" + operandeA.evaluer() + " + " + operandeB.evaluer() + ")";
+        }
+        
     }
 
     @Override
     public String toPolonaise() {
-        return "+";
+        return "+ ";
     }
 }
