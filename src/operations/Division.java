@@ -26,27 +26,11 @@ public class Division implements Expression{
 
     @Override
     public String toInfix() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return "(" + operandeA.evaluer() + " / " + operandeB.evaluer() + ")";
     }
 
     @Override
     public String toPolonaise() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public Expression getOperandeA() {
-        return operandeA;
-    }
-
-    public void setOperandeA(Expression operandeA) {
-        this.operandeA = operandeA;
-    }
-
-    public Expression getOperandeB() {
-        return operandeB;
-    }
-
-    public void setOperandeB(Expression operandeB) {
-        this.operandeB = operandeB;
+        return "/";
     }
 }

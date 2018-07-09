@@ -27,11 +27,11 @@ public class Soustraction implements Expression{
 
     @Override
     public String toInfix() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return "(" + operandeA.evaluer() + " - " + operandeB.evaluer() + ")";
     }
 
     @Override
     public String toPolonaise() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return "-";
     }
 }

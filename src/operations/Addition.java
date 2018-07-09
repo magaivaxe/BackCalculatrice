@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package operations;
 
 /**
@@ -16,7 +12,7 @@ public class Addition implements Expression{
     //Constructeur
     public Addition(Expression operandeA, Expression operandeB) {
         this.operandeA = operandeA;
-        this.operandeB = operandeB; 
+        this.operandeB = operandeB;
     }
 
     @Override
@@ -26,16 +22,11 @@ public class Addition implements Expression{
 
     @Override
     public String toInfix() {
-        //refaire pour les conditions de retour
         return "(" + operandeA.evaluer() + " + " + operandeB.evaluer() + ")";
     }
 
     @Override
     public String toPolonaise() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
-    public void atester(){
-        
+        return "+";
     }
 }
