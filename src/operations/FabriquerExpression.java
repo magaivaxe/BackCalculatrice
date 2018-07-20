@@ -26,6 +26,7 @@ public class FabriquerExpression {
     final String ELEVE = "^";
     final String EXP = "exp";
     final String FAC = "!";
+    final String MAT = "mat";
     
     // objets
     private Stack<Expression> stack = new Stack<>();
@@ -99,15 +100,20 @@ public class FabriquerExpression {
         Expression expression;
         String [] recu = entre.split(" ");
         //
-        for (String str : recu){
-            expression = batirPolonaise(str);
-            stack.push(expression);
-        }
-        if (stack.size() == 1) {
-            return stack.peek().evaluer();
+        if (!recu[0].equals(MAT)) {
+            for (String str : recu){
+                expression = batirPolonaise(str);
+                stack.push(expression);
+            }
+            if (stack.size() == 1) {
+                return stack.peek().evaluer();
+            } else {
+                throw new Exception();
+            }
         } else {
-            throw new Exception();
+            
         }
+        
     }
     
     public List<String> getListInfix() {
