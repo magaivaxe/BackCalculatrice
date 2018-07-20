@@ -14,7 +14,7 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
         // Locaux
-        String calculer = "5 1/";
+        String calculer = "15 !";
         //
         FabriquerExpression fe = new FabriquerExpression();
         System.out.println(fe.calculer(calculer));
@@ -24,7 +24,7 @@ public class Main {
     private static void print(List<String> list){
         Iterator i = list.iterator();
         while (i.hasNext()) {
-            System.out.println(i.next());
+            System.out.print(i.next());
         }
     }
     

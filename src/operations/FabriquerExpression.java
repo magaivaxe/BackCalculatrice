@@ -25,8 +25,8 @@ public class FabriquerExpression {
     final String E = "e";
     final String ELEVE = "^";
     final String EXP = "exp";
+    final String FAC = "!";
     
-    private boolean estPolonaise = false;
     // objets
     private Stack<Expression> stack = new Stack<>();
     private List<String> ListInfix = new LinkedList();
@@ -78,8 +78,10 @@ public class FabriquerExpression {
                 resultat = new Scalaire(Math.E);
             } else if (ELEVE.equals(str)) {
                 resultat = new Eleve(stack.pop(),stack.pop());
-            }else{
-                resultat = new Eleve(new Scalaire(10), stack.pop());
+            }else if (FAC.equals(str)) { 
+                resultat = new Factoriel(stack.pop());
+            } else { /* fonction exp */
+                resultat = new Eleve(stack.pop(), new Scalaire(10));
             }
             ListInfix.add(resultat.toInfix());
             ListPolonaise.add(resultat.toPolonaise());

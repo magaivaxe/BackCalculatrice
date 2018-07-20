@@ -22,12 +22,12 @@ public class Soustraction implements Expression{
     
     @Override
     public double evaluer() {
-        return operandeA.evaluer() - operandeB.evaluer();
+        return operandeB.evaluer() - operandeA.evaluer();
     }
 
     @Override
     public String toInfix() {
-        return "(" + operandeA.evaluer() + " - " + operandeB.evaluer() + ")";
+        return "(" + operandeB.evaluer() + " - " + operandeA.evaluer() + ")";
     }
 
     @Override
