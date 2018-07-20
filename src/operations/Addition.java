@@ -30,7 +30,7 @@ public class Addition implements Expression{
                     .equals(fe.ADDITION)) {
             return "(" + operandeA.evaluer() + " + " + operandeB.evaluer() + ")";
         }
-        
+        return "";
     }
 
     @Override

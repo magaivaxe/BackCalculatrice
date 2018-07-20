@@ -13,6 +13,19 @@ public class FabriquerExpression {
     final String SOUTRACTION = "-";
     final String MULTIPLICATION = "*";
     final String DIVISION = "/";
+    final String SIN = "sin";
+    final String COS = "cos";
+    final String TAN = "tan";
+    final String LN = "ln";
+    final String LOG = "log";
+    final String INV = "1/";
+    final String CARRE = "^2";
+    final String RACINE = "√";
+    final String PI = "π";
+    final String E = "e";
+    final String ELEVE = "^";
+    final String EXP = "exp";
+    
     private boolean estPolonaise = false;
     // objets
     private Stack<Expression> stack = new Stack<>();
@@ -41,8 +54,32 @@ public class FabriquerExpression {
                 resultat = new Soustraction(stack.pop(), stack.pop());
             } else if (MULTIPLICATION.equals(str)) {
                 resultat = new Multiplication(stack.pop(), stack.pop());
-            } else {
+            } else if (DIVISION.equals(str)){
                 resultat = new Division(stack.pop(), stack.pop());
+            } else if (SIN.equals(str)) {
+                resultat = new Sin(stack.pop());
+            } else if (COS.equals(str)) {
+                resultat = new Cos(stack.pop());
+            } else if (TAN.equals(str)) {
+                resultat = new Tan(stack.pop());
+            } else if (LN.equals(str)) {
+                resultat = new Ln(stack.pop());
+            } else if (LOG.equals(str)) {
+                resultat = new Log(stack.pop());
+            } else if (INV.equals(str)) {
+                resultat = new Division(stack.pop(),new Scalaire(1));
+            } else if (CARRE.equals(str)) {
+                resultat = new Multiplication(stack.peek(),stack.pop());
+            } else if (RACINE.equals(str)) {
+                resultat = new Racine(stack.pop());
+            } else if (PI.equals(str)) {
+                resultat = new Scalaire(Math.PI);
+            } else if (E.equals(str)) {
+                resultat = new Scalaire(Math.E);
+            } else if (ELEVE.equals(str)) {
+                resultat = new Eleve(stack.pop(),stack.pop());
+            }else{
+                resultat = new Eleve(new Scalaire(10), stack.pop());
             }
             ListInfix.add(resultat.toInfix());
             ListPolonaise.add(resultat.toPolonaise());
@@ -58,51 +95,19 @@ public class FabriquerExpression {
     public double calculer(String entre) throws Exception{
         //Locaux
         Expression expression;
-        String [] recu = analyserExpression(entre);
+        String [] recu = entre.split(" ");
         //
         for (String str : recu){
             expression = batirPolonaise(str);
             stack.push(expression);
         }
-        return stack.peek().evaluer();
-    }
-    
-    /**
-     * @param entre
-     * @return 
-     */
-    private String[] analyserExpression(String entre) throws Exception{
-        //Locaux
-        String [] recu = entre.split(" ");
-        int symbol = 0;
-        int number = 0;
-        //
-        analyserTypeExpression(recu);
-        //
-        for (String s : recu) {
-            if (ADDITION.equals(s) || SOUTRACTION.equals(s) ||
-                MULTIPLICATION.equals(s) || DIVISION.equals(s)) {
-                symbol++;
-            } else { number++;}
-        }
-        //
-        if (number - symbol == 1) { return recu; }
-        else { throw new Exception(); }
-    }
-    
-    /**
-     * @param str 
-     */
-    private void analyserTypeExpression(String [] str) {
-        //
-        try {
-            double d1 = Double.parseDouble(str[0]);
-            double d2 = Double.parseDouble(str[1]);
-        } catch (NumberFormatException e) {
-            estPolonaise = true;
+        if (stack.size() == 1) {
+            return stack.peek().evaluer();
+        } else {
+            throw new Exception();
         }
     }
-
+    
     public List<String> getListInfix() {
         return ListInfix;
     }

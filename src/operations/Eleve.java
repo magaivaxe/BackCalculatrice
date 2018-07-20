@@ -7,30 +7,27 @@ package operations;
 
 /**
  *
- * @author mpgsa
+ * @author sire_marcos
  */
-public class Division implements Expression{
+public class Eleve implements Expression{
     // des Champs
     private Expression operandeA;
     private Expression operandeB;
     // Constructeur
-    public Division(Expression operandeA, Expression operandeB) {
+    public Eleve(Expression operandeA, Expression operandeB) {
         this.operandeA = operandeA;
         this.operandeB = operandeB;
     }
     
     @Override
-    public double evaluer(){
-        return operandeB.evaluer() / operandeA.evaluer();
+    public double evaluer() {
+        return Math.pow(operandeB.evaluer(), operandeA.evaluer());
     }
 
     @Override
     public String toInfix() {
-        return "(" + operandeA.evaluer() + " / " + operandeB.evaluer() + ")";
-    }
+        return operandeA.evaluer() + "^" + operandeB.evaluer();}
 
     @Override
-    public String toPolonaise() {
-        return "/";
-    }
+    public String toPolonaise() {return "^";}
 }
