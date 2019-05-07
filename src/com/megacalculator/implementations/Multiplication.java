@@ -1,4 +1,6 @@
-package operations;
+package com.megacalculator.implementations;
+
+import com.megacalculator.expression.Expression;
 
 /**
  * @author mpgsa

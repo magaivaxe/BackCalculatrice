@@ -4,7 +4,8 @@ package mainPack;
 
 import java.util.Iterator;
 import java.util.List;
-import operations.FabriquerExpression;
+
+import com.megacalculator.controller.FabriquerExpression;
 
 /**
  *
@@ -14,7 +15,7 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
         // Locaux
-        String calculer = "15 !";
+        String calculer = "π 9 *";
         //
         FabriquerExpression fe = new FabriquerExpression();
         System.out.println(fe.calculer(calculer));
@@ -22,7 +23,7 @@ public class Main {
     }
     
     private static void print(List<String> list){
-        Iterator i = list.iterator();
+        Iterator<String> i = list.iterator();
         while (i.hasNext()) {
             System.out.print(i.next());
         }

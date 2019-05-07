@@ -1,11 +1,15 @@
 
-package operations;
+package com.megacalculator.implementations;
+
+import com.megacalculator.controller.FabriquerExpression;
+import com.megacalculator.expression.EnumMathTypes;
+import com.megacalculator.expression.Expression;
 
 /**
  *
  * @author mpgsa
  */
-public class Addition implements Expression{
+public class Addition implements Expression {
     // des Champs
     private Expression operandeA;
     private Expression operandeB;
@@ -27,7 +31,7 @@ public class Addition implements Expression{
         //
         if (fe.getListInfix().isEmpty() ||
             fe.getListInfix().get(fe.getListInfix().size() - 1)
-                    .equals(fe.ADDITION)) {
+                    .equals(EnumMathTypes.ADDITION.getSymbol())) {
             return "(" + operandeA.evaluer() + " + " + operandeB.evaluer() + ")";
         }
         return "";

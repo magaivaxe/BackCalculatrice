@@ -3,35 +3,33 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package operations;
+package com.megacalculator.implementations;
+
+import com.megacalculator.expression.Expression;
 
 /**
  *
- * @author mpgsa
+ * @author sire_marcos
  */
-public class Soustraction implements Expression{
+public class Eleve implements Expression {
     // des Champs
     private Expression operandeA;
     private Expression operandeB;
-    //Constructeur
-    public Soustraction(Expression operandeA, Expression operandeB) {
+    // Constructeur
+    public Eleve(Expression operandeA, Expression operandeB) {
         this.operandeA = operandeA;
         this.operandeB = operandeB;
     }
     
-    
     @Override
     public double evaluer() {
-        return operandeB.evaluer() - operandeA.evaluer();
+        return Math.pow(operandeB.evaluer(), operandeA.evaluer());
     }
 
     @Override
     public String toInfix() {
-        return "(" + operandeB.evaluer() + " - " + operandeA.evaluer() + ")";
-    }
+        return operandeA.evaluer() + "^" + operandeB.evaluer();}
 
     @Override
-    public String toPolonaise() {
-        return "-";
-    }
+    public String toPolonaise() {return "^";}
 }

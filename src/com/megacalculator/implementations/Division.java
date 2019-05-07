@@ -3,7 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package operations;
+package com.megacalculator.implementations;
+
+import com.megacalculator.expression.Expression;
 
 /**
  *
