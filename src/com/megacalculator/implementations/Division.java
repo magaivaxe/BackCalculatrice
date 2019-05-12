@@ -11,28 +11,33 @@ import com.megacalculator.expression.Expression;
  *
  * @author mpgsa
  */
-public class Division implements Expression{
-    // des Champs
-    private Expression operandeA;
-    private Expression operandeB;
-    // Constructeur
-    public Division(Expression operandeA, Expression operandeB) {
-        this.operandeA = operandeA;
-        this.operandeB = operandeB;
-    }
-    
-    @Override
-    public double evaluer(){
-        return operandeB.evaluer() / operandeA.evaluer();
-    }
+public class Division implements Expression {
+  // des Champs
 
-    @Override
-    public String toInfix() {
-        return "(" + operandeA.evaluer() + " / " + operandeB.evaluer() + ")";
-    }
+  private Expression operandeA;
+  private Expression operandeB;
+  // Constructeur
 
-    @Override
-    public String toPolonaise() {
-        return "/";
-    }
+  public Division(Expression operandeA, Expression operandeB) {
+    this.operandeA = operandeA;
+    this.operandeB = operandeB;
+  }
+
+  public Division() {
+  }
+
+  @Override
+  public double evaluer() {
+    return operandeB.evaluer() / operandeA.evaluer();
+  }
+
+  @Override
+  public String toInfix() {
+    return "(" + operandeA.evaluer() + " / " + operandeB.evaluer() + ")";
+  }
+
+  @Override
+  public String toPolonaise() {
+    return "/";
+  }
 }

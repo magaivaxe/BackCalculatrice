@@ -11,34 +11,44 @@ import com.megacalculator.expression.Expression;
  *
  * @author sire_marcos
  */
-public class Factoriel implements Expression{
-    // des Champs
-    private Expression operande;
-    // Constructeur
-    public Factoriel(Expression operande) {
-        this.operande = operande;
-    }
-    
-    /**
-     * @param n
-     * @return 
-     */
-    private double factorielle(double n){
-        //
-        if(n <= 1){ return n; }
-        return n * factorielle(n - 1);
-    }
-    
-    @Override
-    public double evaluer() { return factorielle(operande.evaluer()); }
+public class Factoriel implements Expression {
+  // des Champs
 
-    @Override
-    public String toInfix() {
-        return "!";
-    }
+  private Expression operande;
+  // Constructeur
 
-    @Override
-    public String toPolonaise() {
-        return "!";
+  public Factoriel(Expression operande) {
+    this.operande = operande;
+  }
+
+  public Factoriel() {
+    throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+  }
+
+  /**
+   * @param n
+   * @return
+   */
+  private double factorielle(double n) {
+    //
+    if (n <= 1) {
+      return n;
     }
+    return n * factorielle(n - 1);
+  }
+
+  @Override
+  public double evaluer() {
+    return factorielle(operande.evaluer());
+  }
+
+  @Override
+  public String toInfix() {
+    return "!";
+  }
+
+  @Override
+  public String toPolonaise() {
+    return "!";
+  }
 }

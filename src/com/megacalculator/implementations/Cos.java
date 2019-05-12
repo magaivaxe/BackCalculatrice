@@ -11,18 +11,31 @@ import com.megacalculator.expression.Expression;
  *
  * @author sire_marcos
  */
-public class Cos implements Expression{
-    // des Champs
-    private Expression operande;
-    // Constructeur
-    public Cos(Expression operande) {this.operande = operande;}
-    
-    @Override
-    public double evaluer() {return Math.cos(operande.evaluer());}
+public class Cos implements Expression {
+  // des Champs
 
-    @Override
-    public String toInfix() {return "cos(" + operande.evaluer() + ")";}
+  private Expression operande;
+  // Constructeur
 
-    @Override
-    public String toPolonaise() {return "cos";}
+  public Cos(Expression operande) {
+    this.operande = operande;
+  }
+
+  public Cos() {
+  }
+
+  @Override
+  public double evaluer() {
+    return Math.cos(operande.evaluer());
+  }
+
+  @Override
+  public String toInfix() {
+    return "cos(" + operande.evaluer() + ")";
+  }
+
+  @Override
+  public String toPolonaise() {
+    return "cos";
+  }
 }

@@ -11,29 +11,33 @@ import com.megacalculator.expression.Expression;
  *
  * @author mpgsa
  */
-public class Soustraction implements Expression{
-    // des Champs
-    private Expression operandeA;
-    private Expression operandeB;
-    //Constructeur
-    public Soustraction(Expression operandeA, Expression operandeB) {
-        this.operandeA = operandeA;
-        this.operandeB = operandeB;
-    }
-    
-    
-    @Override
-    public double evaluer() {
-        return operandeB.evaluer() - operandeA.evaluer();
-    }
+public class Soustraction implements Expression {
+  // des Champs
 
-    @Override
-    public String toInfix() {
-        return "(" + operandeB.evaluer() + " - " + operandeA.evaluer() + ")";
-    }
+  private Expression operandeA;
+  private Expression operandeB;
+  //Constructeur
 
-    @Override
-    public String toPolonaise() {
-        return "-";
-    }
+  public Soustraction(Expression operandeA, Expression operandeB) {
+    this.operandeA = operandeA;
+    this.operandeB = operandeB;
+  }
+
+  public Soustraction() {
+  }
+
+  @Override
+  public double evaluer() {
+    return operandeB.evaluer() - operandeA.evaluer();
+  }
+
+  @Override
+  public String toInfix() {
+    return "(" + operandeB.evaluer() + " - " + operandeA.evaluer() + ")";
+  }
+
+  @Override
+  public String toPolonaise() {
+    return "-";
+  }
 }

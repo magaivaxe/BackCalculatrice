@@ -12,24 +12,33 @@ import com.megacalculator.expression.Expression;
  * @author sire_marcos
  */
 public class Eleve implements Expression {
-    // des Champs
-    private Expression operandeA;
-    private Expression operandeB;
-    // Constructeur
-    public Eleve(Expression operandeA, Expression operandeB) {
-        this.operandeA = operandeA;
-        this.operandeB = operandeB;
-    }
-    
-    @Override
-    public double evaluer() {
-        return Math.pow(operandeB.evaluer(), operandeA.evaluer());
-    }
+  // des Champs
 
-    @Override
-    public String toInfix() {
-        return operandeA.evaluer() + "^" + operandeB.evaluer();}
+  private Expression operandeA;
+  private Expression operandeB;
+  // Constructeur
 
-    @Override
-    public String toPolonaise() {return "^";}
+  public Eleve(Expression operandeA, Expression operandeB) {
+    this.operandeA = operandeA;
+    this.operandeB = operandeB;
+  }
+
+  public Eleve() {
+    throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+  }
+
+  @Override
+  public double evaluer() {
+    return Math.pow(operandeB.evaluer(), operandeA.evaluer());
+  }
+
+  @Override
+  public String toInfix() {
+    return operandeA.evaluer() + "^" + operandeB.evaluer();
+  }
+
+  @Override
+  public String toPolonaise() {
+    return "^";
+  }
 }

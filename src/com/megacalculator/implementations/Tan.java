@@ -11,18 +11,32 @@ import com.megacalculator.expression.Expression;
  *
  * @author sire_marcos
  */
-public class Tan implements Expression{
-    // des Champs
-    private Expression operande;
-    // Constructeur
-    public Tan(Expression operande) {this.operande = operande;}
-    
-    @Override
-    public double evaluer() {return Math.tan(operande.evaluer());}
+public class Tan implements Expression {
+  // des Champs
 
-    @Override
-    public String toInfix() {return "tan(" + operande.evaluer() + ")";}
+  private Expression operande;
+  // Constructeur
 
-    @Override
-    public String toPolonaise() {return "tan";}
+  public Tan(Expression operande) {
+    this.operande = operande;
+  }
+
+  public Tan() {
+    throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+  }
+
+  @Override
+  public double evaluer() {
+    return Math.tan(operande.evaluer());
+  }
+
+  @Override
+  public String toInfix() {
+    return "tan(" + operande.evaluer() + ")";
+  }
+
+  @Override
+  public String toPolonaise() {
+    return "tan";
+  }
 }

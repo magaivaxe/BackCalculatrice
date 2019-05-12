@@ -11,30 +11,35 @@ import com.megacalculator.expression.Expression;
  *
  * @author mpgsa
  */
-public class Scalaire implements Expression{
-    // des Champs
-    private double scalaire;
-    // objets
-    
-    // Constructeur
-    public Scalaire(double scalaire) {
-        this.scalaire = scalaire;
-    }
-    
-    @Override
-    public double evaluer() {
-        return scalaire;
-    }
+public class Scalaire implements Expression {
+  // des Champs
 
-    @Override
-    public String toInfix() {
-        String aRetourner = Double.toString(scalaire);
-        return aRetourner;
-    }
+  private double scalaire;
+  // objets
 
-    @Override
-    public String toPolonaise() {
-        String aRetourner = Double.toString(scalaire);
-        return aRetourner + " ";
-    }
+  // Constructeur
+  public Scalaire(double scalaire) {
+    this.scalaire = scalaire;
+  }
+
+  public Scalaire() {
+    throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+  }
+
+  @Override
+  public double evaluer() {
+    return scalaire;
+  }
+
+  @Override
+  public String toInfix() {
+    String aRetourner = Double.toString(scalaire);
+    return aRetourner;
+  }
+
+  @Override
+  public String toPolonaise() {
+    String aRetourner = Double.toString(scalaire);
+    return aRetourner + " ";
+  }
 }

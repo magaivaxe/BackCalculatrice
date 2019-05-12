@@ -1,4 +1,4 @@
-package mainPack;
+package com.megacalculator.app;
 
 import com.megacalculator.controller.FabriquerExpression;
 import java.util.Iterator;
