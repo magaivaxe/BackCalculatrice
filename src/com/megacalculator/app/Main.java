@@ -16,7 +16,7 @@ public class Main {
     //
     FabriquerExpression fe = new FabriquerExpression();
     System.out.println(fe.calculer(calculer));
-//        print(fe.getListPolonaise());
+    print(fe.getListPolonaise());
   }
 
   private static void print(List<String> list) {

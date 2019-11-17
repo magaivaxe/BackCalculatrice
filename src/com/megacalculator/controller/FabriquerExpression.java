@@ -21,14 +21,14 @@ import com.megacalculator.implementations.Soustraction;
 import com.megacalculator.implementations.Tan;
 
 /**
- * @author mpgsa
+ * @author Marcos
  */
 public class FabriquerExpression {
 
-	// objets
+	// objects
 	private final List<String> ListInfix;
 	private final List<String> ListPolonaise;
-	// constructeur
+	// constructor
 
 	public FabriquerExpression() {
 		this.ListInfix = new LinkedList<>();
